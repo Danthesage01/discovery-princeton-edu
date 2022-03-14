@@ -88,7 +88,8 @@ i{
     border-radius: 4px;
     display: flex;
     align-items: center;
-    margin: .2em 0;
+    margin: 2em 0;
+    margin-bottom: .3em;
 }
 .box > .fa-search-css{
     font-size: 20px;
