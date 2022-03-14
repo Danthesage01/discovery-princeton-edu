@@ -195,7 +195,6 @@ header{
 .carousel-btn{
     position: absolute;
     padding-bottom: 0;
-    align-items: baseline;
     transform: translate(480%,-250%);
 }
 .carousel-btn-hide{
