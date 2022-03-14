@@ -73,6 +73,7 @@ h2 a:hover{
 }
 .site-title-box{
     cursor: text;
+    margin: 5px 0;
 }
 i{  
     font-size: 1em;
@@ -81,13 +82,13 @@ i{
 
 .box{
     width: 250px;
-    height: 30px;
+    height: 40px;
     background: #fff;
     border: 2px solid;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    margin-bottom: .2em;
+    margin: .2em 0;
 }
 .box > .fa-search-css{
     font-size: 20px;
