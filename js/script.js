@@ -1,12 +1,11 @@
 // Variables
-const dotsNav = document.querySelector(".carousel-nav")
-const dots = Array.from(dotsNav.children)
-const track = document.querySelector(".carousel-track")
-const slides = Array.from(track.children)
-const searchBox = document.querySelector("#box")
-const totalSlides = slides.length
-let slidePosition = 0
 
+let slidePosition = 0;
+const carouselBtnNext = document.getElementById("carousel-button-next"),
+      carouselBtnPrev = document.getElementById("carousel-button-prev"),
+      slides = document.getElementsByClassName("carousel-item"),
+      totalSlides = slides.length,
+      searchBox = document.querySelector("#box")
 
 // Functions
 function hideAllSlides() {
@@ -36,34 +35,16 @@ function moveToPrevSlide() {
     slides[slidePosition].classList.add("carousel-item-visible");
 
 }
-dotsNav.addEventListener("click", e=>{
-    const targetDot = e.target.closest("button")
-    if(!targetDot) return
-    
-    const currentSlide = track.querySelector(".current-slide")
-    const currentDot = dotsNav.querySelector(".current-slide")
-    const targetIndex = dots.findIndex(dot => dot === targetDot)
-
-if (moveToNextSlide()) {
-    if (slidePosition === totalSlides - 1) {
-        slidePosition = 0
-    } else {
-        slidePosition++
-    } 
-   
-}
-   
-    currentDot.classList.remove("current-slide")
-    targetDot.classList.add("current-slide")
-    })
 
 function displaySearchInput(e) {
-    if (e.target === document.querySelector(".fa")) {
+    if (e.target === document.querySelector("div > .fa")) {
         searchBox.classList.add("box")
         searchBox.children[0].classList.add("fa-search-css")
-        searchBox.innerHTML += ` <input type="text" name="s" class="search" placeholder="Search...">`
+        searchBox.innerHTML += ` <input type="text" name="search" id="search" class="search" placeholder="Search...">`
+
+        e.target.value = ""
     }
-    else {
+    else if(!document.querySelector("#box").contains(e.target)){
         searchBox.classList.remove("box")
         searchBox.children[0].classList.remove("fa-search-css")
         searchBox.innerHTML = `<i class="fa fa-search fa-flip-horizontal"></i>`
@@ -85,3 +66,14 @@ document.querySelector(".carousel").addEventListener("mouseover", (e)=>{
     const itemBtnC =document.querySelector(".carousel-btn")
     itemBtnC.style.display = "block"  
 })
+
+
+// Hamburger Icon
+const hamburger = document.getElementById("menu-icon")
+
+function openMenu(e){
+
+    console.log("clicked")
+}
+
+hamburger.addEventListener("click", openMenu)
